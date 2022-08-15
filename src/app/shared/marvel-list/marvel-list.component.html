@@ -1,0 +1,26 @@
+<marvel-search (emmitSearch)="getSearch($event)"></marvel-search>
+
+<section class="listing">
+    <ng-template ngFor let-marvel [ngForOf]="getAllCharacters">
+        <a class="marvel">
+            <section class="marvel__status">
+                <h2>
+                    {{marvel.name}}
+                </h2>
+        
+                <ul>
+                    <li *ngFor="let value of marvel.events.items">
+                        {{value.name}}
+                    </li>
+                </ul>
+            </section>
+        
+            <section class="marvel__image">
+                <img
+                    [src]="marvel.thumbnail.path+'.'+marvel.thumbnail.extension"
+                    alt="marvel"
+                >
+            </section>
+        </a>
+    </ng-template>
+</section>
